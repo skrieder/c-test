@@ -35,5 +35,6 @@ int main ( int argc, char *argv[] )
       int sleeptime = atoi(argv[1]);
       // call msleep with sleep time
       msleep(sleeptime);
+      return 0;
    }
 }
