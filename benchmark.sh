@@ -11,7 +11,7 @@ sleeptime=100
 	echo "Sleeptime is equal to: " $sleeptime
 	
 	# run swift
-	time swift -tc.file tc.data -sites.file $throttle-throttle-sites.xml sleep.swift -sleeptime=$sleeptime
+	time swift -tc.file tc.data -sites.file sites/$throttle-throttle-sites.xml sleep.swift -sleeptime=$sleeptime
 	
         # double the sleeptime
 	sleeptime=$(expr $sleeptime + $sleeptime)
