@@ -3,5 +3,3 @@ hello:
 
 clean:
 	rm sleep
-	rm -r sleep-*
-	rm *.result
