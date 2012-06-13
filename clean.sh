@@ -1,4 +1,5 @@
-rm -r sleep-*
-rm *.result
-rm *.kml
-rm *.log
+mv sleep-* logs/
+mv *.result logs/
+mv *.kml logs/
+mv *.log logs/
+mv *.xml logs/
