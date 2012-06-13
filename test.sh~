@@ -1,0 +1,10 @@
+#! /bin/bash                                                                                                                                                                                               
+j=100
+for i in {1..1}
+do
+    echo "I is equal to: " $i    
+    echo "J is equal to: " $j    
+    time swift -tc.file tc.data -sites.file 1-throttle-sites.xml sleep.swift -sleeptime=$j
+    j=$(expr $j + $j)
+    echo "J is equal to: " $j
+done
