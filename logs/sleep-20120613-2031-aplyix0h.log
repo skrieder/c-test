@@ -1,0 +1,973 @@
+2012-06-13 20:31:33,554-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, sites/1-throttle-sites.xml, sleep.swift, -sleeptime=12800]
+2012-06-13 20:31:33,554-0500 DEBUG Loader Max heap: 252248064
+2012-06-13 20:31:33,555-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (int s) {   
+     sleep s stdout=@filename(t);
+}
+
+int sleepTime = @toint(@arg("sleeptime","1"));
+
+string inputNames = "scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f,i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(sleepTime);
+}
+
+
+2012-06-13 20:31:33,555-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-13 20:31:33,556-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-13 20:31:33,556-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-13 20:31:33,556-0500 DEBUG Loader Recompilation suppressed.
+2012-06-13 20:31:33,707-0500 DEBUG Loader setting: sites.file to: sites/1-throttle-sites.xml
+2012-06-13 20:31:33,707-0500 DEBUG Loader setting: tc.file to: tc.data
+2012-06-13 20:31:33,708-0500 DEBUG textfiles BEGIN SITES:
+<config>
+
+  <pool handle="localhost">
+    <filesystem provider="local" />
+    <execution provider="local" />
+    <workdirectory >/var/tmp</workdirectory>
+    <profile namespace="karajan" key="jobThrottle">0</profile>
+    <profile namespace="karajan" key="initialScore">10000</profile>
+  </pool>
+
+</config>
+
+
+2012-06-13 20:31:33,708-0500 DEBUG textfiles END SITES:
+2012-06-13 20:31:33,712-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-13 20:31:34,368-0500 INFO  unknown Using sites file: sites/1-throttle-sites.xml
+2012-06-13 20:31:34,417-0500 INFO  unknown Using tc.data: tc.data
+2012-06-13 20:31:34,522-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-13 20:31:35,143-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-13 20:31:35,144-0500 INFO  unknown RUNID id=run:20120613-2031-aplyix0h
+2012-06-13 20:31:35,187-0500 INFO  SetFieldValue Set: inputNames=scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh
+2012-06-13 20:31:35,188-0500 INFO  VDLFunction FUNCTION: arg()
+2012-06-13 20:31:35,189-0500 INFO  VDLFunction FUNCTION: toint()
+2012-06-13 20:31:35,189-0500 INFO  SetFieldValue Set: sleepTime=12800.0
+2012-06-13 20:31:35,195-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[1]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[2]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[3]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[4]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[5]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[6]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[7]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[8]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[9]
+2012-06-13 20:31:35,196-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[10]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[11]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[12]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[13]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[14]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[15]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[16]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[17]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[18]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[19]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[20]
+2012-06-13 20:31:35,197-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[21]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[22]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[23]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[24]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[25]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[26]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[27]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[28]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[29]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[30]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[31]
+2012-06-13 20:31:35,198-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[32]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[33]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[34]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[35]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[36]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[37]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[38]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[39]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[40]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[41]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[42]
+2012-06-13 20:31:35,199-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[43]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[44]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[45]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[46]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[47]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[48]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[49]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[50]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[51]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[52]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[53]
+2012-06-13 20:31:35,200-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[54]
+2012-06-13 20:31:35,201-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[55]
+2012-06-13 20:31:35,201-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[56]
+2012-06-13 20:31:35,201-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[57]
+2012-06-13 20:31:35,201-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[58]
+2012-06-13 20:31:35,201-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[59]
+2012-06-13 20:31:35,201-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[60]
+2012-06-13 20:31:35,201-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[61]
+2012-06-13 20:31:35,201-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[62]
+2012-06-13 20:31:35,201-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[63]
+2012-06-13 20:31:35,207-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-6
+2012-06-13 20:31:35,207-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-0
+2012-06-13 20:31:35,208-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-13
+2012-06-13 20:31:35,208-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-5
+2012-06-13 20:31:35,208-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-8
+2012-06-13 20:31:35,208-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-3
+2012-06-13 20:31:35,208-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-18
+2012-06-13 20:31:35,209-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-22
+2012-06-13 20:31:35,209-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-14
+2012-06-13 20:31:35,209-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-24
+2012-06-13 20:31:35,209-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-26
+2012-06-13 20:31:35,210-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-19
+2012-06-13 20:31:35,210-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-30
+2012-06-13 20:31:35,210-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-34
+2012-06-13 20:31:35,209-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-2
+2012-06-13 20:31:35,211-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-15
+2012-06-13 20:31:35,211-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-32
+2012-06-13 20:31:35,209-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-27
+2012-06-13 20:31:35,211-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-20
+2012-06-13 20:31:35,211-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-21
+2012-06-13 20:31:35,211-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-1
+2012-06-13 20:31:35,213-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-29
+2012-06-13 20:31:35,211-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-16
+2012-06-13 20:31:35,211-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-9
+2012-06-13 20:31:35,213-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-33
+2012-06-13 20:31:35,211-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-36
+2012-06-13 20:31:35,214-0500 DEBUG vdl:mains SCOPE thread=0-2-6
+2012-06-13 20:31:35,210-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-10
+2012-06-13 20:31:35,214-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-35
+2012-06-13 20:31:35,209-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-12
+2012-06-13 20:31:35,209-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-23
+2012-06-13 20:31:35,209-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-28
+2012-06-13 20:31:35,215-0500 DEBUG vdl:mains SCOPE thread=0-2-3
+2012-06-13 20:31:35,215-0500 DEBUG vdl:mains SCOPE thread=0-2-8
+2012-06-13 20:31:35,214-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-31
+2012-06-13 20:31:35,214-0500 DEBUG vdl:mains SCOPE thread=0-2-5
+2012-06-13 20:31:35,214-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-7
+2012-06-13 20:31:35,214-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-17
+2012-06-13 20:31:35,213-0500 DEBUG vdl:mains SCOPE thread=0-2-13
+2012-06-13 20:31:35,212-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-4
+2012-06-13 20:31:35,212-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-25
+2012-06-13 20:31:35,212-0500 DEBUG vdl:mains SCOPE thread=0-2-0
+2012-06-13 20:31:35,218-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-38
+2012-06-13 20:31:35,217-0500 DEBUG vdl:mains SCOPE thread=0-2-19
+2012-06-13 20:31:35,218-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-39
+2012-06-13 20:31:35,217-0500 DEBUG vdl:mains SCOPE thread=0-2-26
+2012-06-13 20:31:35,217-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-37
+2012-06-13 20:31:35,219-0500 DEBUG vdl:mains SCOPE thread=0-2-32
+2012-06-13 20:31:35,217-0500 DEBUG vdl:mains SCOPE thread=0-2-14
+2012-06-13 20:31:35,220-0500 DEBUG vdl:mains SCOPE thread=0-2-21
+2012-06-13 20:31:35,217-0500 DEBUG vdl:mains SCOPE thread=0-2-24
+2012-06-13 20:31:35,217-0500 DEBUG vdl:mains SCOPE thread=0-2-22
+2012-06-13 20:31:35,216-0500 DEBUG vdl:mains SCOPE thread=0-2-18
+2012-06-13 20:31:35,216-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-11
+2012-06-13 20:31:35,221-0500 DEBUG vdl:mains SCOPE thread=0-2-16
+2012-06-13 20:31:35,220-0500 DEBUG vdl:mains SCOPE thread=0-2-29
+2012-06-13 20:31:35,220-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-40
+2012-06-13 20:31:35,220-0500 DEBUG vdl:mains SCOPE thread=0-2-1
+2012-06-13 20:31:35,220-0500 DEBUG vdl:mains SCOPE thread=0-2-20
+2012-06-13 20:31:35,219-0500 DEBUG vdl:mains SCOPE thread=0-2-27
+2012-06-13 20:31:35,223-0500 DEBUG vdl:mains SCOPE thread=0-2-36
+2012-06-13 20:31:35,223-0500 DEBUG vdl:mains SCOPE thread=0-2-28
+2012-06-13 20:31:35,219-0500 DEBUG vdl:mains SCOPE thread=0-2-15
+2012-06-13 20:31:35,219-0500 DEBUG vdl:mains SCOPE thread=0-2-2
+2012-06-13 20:31:35,219-0500 DEBUG vdl:mains SCOPE thread=0-2-34
+2012-06-13 20:31:35,218-0500 DEBUG vdl:mains SCOPE thread=0-2-30
+2012-06-13 20:31:35,224-0500 DEBUG vdl:mains SCOPE thread=0-2-31
+2012-06-13 20:31:35,225-0500 DEBUG vdl:mains SCOPE thread=0-2-17
+2012-06-13 20:31:35,223-0500 DEBUG vdl:mains SCOPE thread=0-2-23
+2012-06-13 20:31:35,223-0500 DEBUG vdl:mains SCOPE thread=0-2-12
+2012-06-13 20:31:35,225-0500 DEBUG vdl:mains SCOPE thread=0-2-25
+2012-06-13 20:31:35,223-0500 DEBUG vdl:mains SCOPE thread=0-2-35
+2012-06-13 20:31:35,223-0500 DEBUG vdl:mains SCOPE thread=0-2-10
+2012-06-13 20:31:35,226-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-48
+2012-06-13 20:31:35,221-0500 DEBUG vdl:mains SCOPE thread=0-2-33
+2012-06-13 20:31:35,226-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-44
+2012-06-13 20:31:35,221-0500 DEBUG vdl:mains SCOPE thread=0-2-9
+2012-06-13 20:31:35,227-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-49
+2012-06-13 20:31:35,227-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-51
+2012-06-13 20:31:35,227-0500 DEBUG vdl:mains SCOPE thread=0-2-38
+2012-06-13 20:31:35,226-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-52
+2012-06-13 20:31:35,226-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-46
+2012-06-13 20:31:35,226-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-50
+2012-06-13 20:31:35,228-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-54
+2012-06-13 20:31:35,225-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-43
+2012-06-13 20:31:35,225-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-47
+2012-06-13 20:31:35,225-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-45
+2012-06-13 20:31:35,225-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-42
+2012-06-13 20:31:35,225-0500 DEBUG vdl:mains SCOPE thread=0-2-4
+2012-06-13 20:31:35,225-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-41
+2012-06-13 20:31:35,225-0500 DEBUG vdl:mains SCOPE thread=0-2-7
+2012-06-13 20:31:35,230-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-57
+2012-06-13 20:31:35,230-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-61
+2012-06-13 20:31:35,229-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-62
+2012-06-13 20:31:35,229-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-60
+2012-06-13 20:31:35,229-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-59
+2012-06-13 20:31:35,229-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-56
+2012-06-13 20:31:35,229-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-53
+2012-06-13 20:31:35,229-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-58
+2012-06-13 20:31:35,228-0500 DEBUG vdl:mains SCOPE thread=0-2-39
+2012-06-13 20:31:35,228-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-55
+2012-06-13 20:31:35,234-0500 DEBUG vdl:mains SCOPE thread=0-2-48
+2012-06-13 20:31:35,234-0500 DEBUG vdl:mains SCOPE thread=0-2-49
+2012-06-13 20:31:35,234-0500 DEBUG vdl:mains SCOPE thread=0-2-52
+2012-06-13 20:31:35,234-0500 DEBUG vdl:mains SCOPE thread=0-2-46
+2012-06-13 20:31:35,232-0500 DEBUG vdl:mains SCOPE thread=0-2-40
+2012-06-13 20:31:35,232-0500 DEBUG vdl:mains SCOPE thread=0-2-11
+2012-06-13 20:31:35,230-0500 DEBUG vdl:mains SCOPE thread=0-2-37
+2012-06-13 20:31:35,230-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-2-63
+2012-06-13 20:31:35,235-0500 DEBUG vdl:mains SCOPE thread=0-2-41
+2012-06-13 20:31:35,235-0500 DEBUG vdl:mains SCOPE thread=0-2-45
+2012-06-13 20:31:35,235-0500 DEBUG vdl:mains SCOPE thread=0-2-42
+2012-06-13 20:31:35,235-0500 DEBUG vdl:mains SCOPE thread=0-2-47
+2012-06-13 20:31:35,235-0500 DEBUG vdl:mains SCOPE thread=0-2-51
+2012-06-13 20:31:35,234-0500 DEBUG vdl:mains SCOPE thread=0-2-43
+2012-06-13 20:31:35,234-0500 DEBUG vdl:mains SCOPE thread=0-2-50
+2012-06-13 20:31:35,234-0500 DEBUG vdl:mains SCOPE thread=0-2-54
+2012-06-13 20:31:35,234-0500 DEBUG vdl:mains SCOPE thread=0-2-44
+2012-06-13 20:31:35,237-0500 DEBUG vdl:mains SCOPE thread=0-2-62
+2012-06-13 20:31:35,238-0500 DEBUG vdl:mains SCOPE thread=0-2-55
+2012-06-13 20:31:35,238-0500 DEBUG vdl:mains SCOPE thread=0-2-58
+2012-06-13 20:31:35,240-0500 DEBUG vdl:mains SCOPE thread=0-2-63
+2012-06-13 20:31:35,237-0500 DEBUG vdl:mains SCOPE thread=0-2-53
+2012-06-13 20:31:35,237-0500 DEBUG vdl:mains SCOPE thread=0-2-56
+2012-06-13 20:31:35,236-0500 DEBUG vdl:mains SCOPE thread=0-2-59
+2012-06-13 20:31:35,236-0500 DEBUG vdl:mains SCOPE thread=0-2-60
+2012-06-13 20:31:35,236-0500 DEBUG vdl:mains SCOPE thread=0-2-57
+2012-06-13 20:31:35,236-0500 DEBUG vdl:mains SCOPE thread=0-2-61
+2012-06-13 20:31:35,279-0500 INFO  SetFieldValue Set: swift#mapper#17003=4.result
+2012-06-13 20:31:35,280-0500 INFO  SetFieldValue Set: swift#mapper#17003=46.result
+2012-06-13 20:31:35,280-0500 INFO  SetFieldValue Set: swift#mapper#17003=18.result
+2012-06-13 20:31:35,280-0500 INFO  SetFieldValue Set: swift#mapper#17003=7.result
+2012-06-13 20:31:35,279-0500 INFO  SetFieldValue Set: swift#mapper#17003=30.result
+2012-06-13 20:31:35,280-0500 INFO  SetFieldValue Set: swift#mapper#17003=1.result
+2012-06-13 20:31:35,280-0500 INFO  SetFieldValue Set: swift#mapper#17003=48.result
+2012-06-13 20:31:35,281-0500 INFO  SetFieldValue Set: swift#mapper#17003=22.result
+2012-06-13 20:31:35,281-0500 INFO  SetFieldValue Set: swift#mapper#17003=19.result
+2012-06-13 20:31:35,281-0500 INFO  SetFieldValue Set: swift#mapper#17003=26.result
+2012-06-13 20:31:35,281-0500 INFO  SetFieldValue Set: swift#mapper#17003=49.result
+2012-06-13 20:31:35,282-0500 INFO  SetFieldValue Set: swift#mapper#17003=8.result
+2012-06-13 20:31:35,282-0500 INFO  SetFieldValue Set: swift#mapper#17003=25.result
+2012-06-13 20:31:35,283-0500 INFO  SetFieldValue Set: swift#mapper#17003=5.result
+2012-06-13 20:31:35,280-0500 INFO  SetFieldValue Set: swift#mapper#17003=24.result
+2012-06-13 20:31:35,280-0500 INFO  SetFieldValue Set: swift#mapper#17003=35.result
+2012-06-13 20:31:35,280-0500 INFO  SetFieldValue Set: swift#mapper#17003=10.result
+2012-06-13 20:31:35,283-0500 INFO  SetFieldValue Set: swift#mapper#17003=36.result
+2012-06-13 20:31:35,281-0500 INFO  SetFieldValue Set: swift#mapper#17003=2.result
+2012-06-13 20:31:35,284-0500 INFO  SetFieldValue Set: swift#mapper#17003=32.result
+2012-06-13 20:31:35,284-0500 INFO  SetFieldValue Set: swift#mapper#17003=23.result
+2012-06-13 20:31:35,284-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,284-0500 INFO  SetFieldValue Set: swift#mapper#17003=21.result
+2012-06-13 20:31:35,284-0500 INFO  SetFieldValue Set: swift#mapper#17003=41.result
+2012-06-13 20:31:35,284-0500 INFO  SetFieldValue Set: swift#mapper#17003=11.result
+2012-06-13 20:31:35,284-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,285-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,283-0500 INFO  SetFieldValue Set: swift#mapper#17003=42.result
+2012-06-13 20:31:35,285-0500 INFO  SetFieldValue Set: swift#mapper#17003=51.result
+2012-06-13 20:31:35,284-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,285-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,284-0500 INFO  SetFieldValue Set: swift#mapper#17003=34.result
+2012-06-13 20:31:35,284-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,285-0500 INFO  SetFieldValue Set: swift#mapper#17003=17.result
+2012-06-13 20:31:35,286-0500 INFO  SetFieldValue Set: swift#mapper#17003=38.result
+2012-06-13 20:31:35,286-0500 INFO  SetFieldValue Set: swift#mapper#17003=62.result
+2012-06-13 20:31:35,285-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,285-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,286-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,286-0500 INFO  SetFieldValue Set: swift#mapper#17003=20.result
+2012-06-13 20:31:35,287-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,287-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,285-0500 INFO  SetFieldValue Set: swift#mapper#17003=14.result
+2012-06-13 20:31:35,285-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,285-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,285-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,287-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,288-0500 INFO  SetFieldValue Set: swift#mapper#17003=45.result
+2012-06-13 20:31:35,288-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,287-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,287-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,286-0500 INFO  SetFieldValue Set: swift#mapper#17003=37.result
+2012-06-13 20:31:35,286-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,286-0500 INFO  SetFieldValue Set: swift#mapper#17003=27.result
+2012-06-13 20:31:35,286-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,289-0500 INFO  SetFieldValue Set: swift#mapper#17003=6.result
+2012-06-13 20:31:35,289-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,288-0500 INFO  SetFieldValue Set: swift#mapper#17003=12.result
+2012-06-13 20:31:35,288-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,288-0500 INFO  SetFieldValue Set: swift#mapper#17003=33.result
+2012-06-13 20:31:35,288-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,288-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,288-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,288-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,290-0500 INFO  SetFieldValue Set: swift#mapper#17003=47.result
+2012-06-13 20:31:35,290-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,290-0500 INFO  SetFieldValue Set: swift#mapper#17003=50.result
+2012-06-13 20:31:35,290-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,290-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,290-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,291-0500 INFO  SetFieldValue Set: swift#mapper#17003=0.result
+2012-06-13 20:31:35,289-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,289-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,291-0500 INFO  SetFieldValue Set: swift#mapper#17003=15.result
+2012-06-13 20:31:35,289-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,289-0500 INFO  SetFieldValue Set: swift#mapper#17003=58.result
+2012-06-13 20:31:35,292-0500 INFO  SetFieldValue Set: swift#mapper#17003=3.result
+2012-06-13 20:31:35,289-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,289-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,292-0500 INFO  SetFieldValue Set: swift#mapper#17003=52.result
+2012-06-13 20:31:35,292-0500 INFO  SetFieldValue Set: swift#mapper#17003=63.result
+2012-06-13 20:31:35,292-0500 INFO  SetFieldValue Set: swift#mapper#17003=31.result
+2012-06-13 20:31:35,292-0500 INFO  SetFieldValue Set: swift#mapper#17003=28.result
+2012-06-13 20:31:35,291-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,291-0500 INFO  SetFieldValue Set: swift#mapper#17003=53.result
+2012-06-13 20:31:35,291-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,293-0500 INFO  SetFieldValue Set: swift#mapper#17003=39.result
+2012-06-13 20:31:35,293-0500 INFO  SetFieldValue Set: swift#mapper#17003=43.result
+2012-06-13 20:31:35,293-0500 INFO  SetFieldValue Set: swift#mapper#17003=55.result
+2012-06-13 20:31:35,294-0500 INFO  SetFieldValue Set: swift#mapper#17003=44.result
+2012-06-13 20:31:35,294-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,294-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,294-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,294-0500 INFO  SetFieldValue Set: swift#mapper#17003=56.result
+2012-06-13 20:31:35,294-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,290-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,290-0500 INFO  SetFieldValue Set: swift#mapper#17003=40.result
+2012-06-13 20:31:35,290-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,295-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,294-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,295-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,295-0500 INFO  SetFieldValue Set: swift#mapper#17003=9.result
+2012-06-13 20:31:35,295-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,296-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,296-0500 INFO  SetFieldValue Set: swift#mapper#17003=13.result
+2012-06-13 20:31:35,296-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,296-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,297-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,297-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,298-0500 INFO  SetFieldValue Set: swift#mapper#17003=57.result
+2012-06-13 20:31:35,298-0500 INFO  SetFieldValue Set: swift#mapper#17003=61.result
+2012-06-13 20:31:35,299-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,300-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,301-0500 INFO  SetFieldValue Set: swift#mapper#17003=59.result
+2012-06-13 20:31:35,302-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,294-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,294-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,293-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,292-0500 INFO  SetFieldValue Set: swift#mapper#17003=16.result
+2012-06-13 20:31:35,292-0500 INFO  SetFieldValue Set: swift#mapper#17003=29.result
+2012-06-13 20:31:35,292-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,305-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-50-1 name=countwords
+2012-06-13 20:31:35,305-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-5-1 name=countwords
+2012-06-13 20:31:35,305-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-11-1 name=countwords
+2012-06-13 20:31:35,305-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-19-1 name=countwords
+2012-06-13 20:31:35,304-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-21-1 name=countwords
+2012-06-13 20:31:35,304-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-4-1 name=countwords
+2012-06-13 20:31:35,304-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-45-1 name=countwords
+2012-06-13 20:31:35,296-0500 INFO  SetFieldValue Set: swift#mapper#17003=54.result
+2012-06-13 20:31:35,295-0500 INFO  SetFieldValue Set: swift#mapper#17003=60.result
+2012-06-13 20:31:35,295-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,306-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-25-1 name=countwords
+2012-06-13 20:31:35,306-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-22-1 name=countwords
+2012-06-13 20:31:35,306-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-17-1 name=countwords
+2012-06-13 20:31:35,306-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-2-1 name=countwords
+2012-06-13 20:31:35,306-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-6-1 name=countwords
+2012-06-13 20:31:35,307-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-27-1 name=countwords
+2012-06-13 20:31:35,306-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-40-1 name=countwords
+2012-06-13 20:31:35,306-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-12-1 name=countwords
+2012-06-13 20:31:35,306-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-14-1 name=countwords
+2012-06-13 20:31:35,305-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-33-1 name=countwords
+2012-06-13 20:31:35,305-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-49-1 name=countwords
+2012-06-13 20:31:35,308-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-46-1 name=countwords
+2012-06-13 20:31:35,308-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-34-1 name=countwords
+2012-06-13 20:31:35,308-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-37-1 name=countwords
+2012-06-13 20:31:35,308-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-7-1 name=countwords
+2012-06-13 20:31:35,308-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-18-1 name=countwords
+2012-06-13 20:31:35,307-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-62-1 name=countwords
+2012-06-13 20:31:35,307-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-30-1 name=countwords
+2012-06-13 20:31:35,307-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-0-1 name=countwords
+2012-06-13 20:31:35,307-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-58-1 name=countwords
+2012-06-13 20:31:35,307-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-8-1 name=countwords
+2012-06-13 20:31:35,307-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-26-1 name=countwords
+2012-06-13 20:31:35,309-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-23-1 name=countwords
+2012-06-13 20:31:35,310-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-32-1 name=countwords
+2012-06-13 20:31:35,309-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-48-1 name=countwords
+2012-06-13 20:31:35,309-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-42-1 name=countwords
+2012-06-13 20:31:35,309-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-10-1 name=countwords
+2012-06-13 20:31:35,309-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-1-1 name=countwords
+2012-06-13 20:31:35,309-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-24-1 name=countwords
+2012-06-13 20:31:35,308-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-41-1 name=countwords
+2012-06-13 20:31:35,311-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,311-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-52-1 name=countwords
+2012-06-13 20:31:35,311-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-63-1 name=countwords
+2012-06-13 20:31:35,308-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-20-1 name=countwords
+2012-06-13 20:31:35,308-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-35-1 name=countwords
+2012-06-13 20:31:35,308-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-36-1 name=countwords
+2012-06-13 20:31:35,311-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,311-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-31-1 name=countwords
+2012-06-13 20:31:35,311-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-29-1 name=countwords
+2012-06-13 20:31:35,311-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,310-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-3-1 name=countwords
+2012-06-13 20:31:35,310-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-38-1 name=countwords
+2012-06-13 20:31:35,310-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-53-1 name=countwords
+2012-06-13 20:31:35,313-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-44-1 name=countwords
+2012-06-13 20:31:35,310-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-15-1 name=countwords
+2012-06-13 20:31:35,313-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-56-1 name=countwords
+2012-06-13 20:31:35,314-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-60-1 name=countwords
+2012-06-13 20:31:35,314-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-9-1 name=countwords
+2012-06-13 20:31:35,310-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-47-1 name=countwords
+2012-06-13 20:31:35,313-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-55-1 name=countwords
+2012-06-13 20:31:35,312-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-43-1 name=countwords
+2012-06-13 20:31:35,312-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-39-1 name=countwords
+2012-06-13 20:31:35,312-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-28-1 name=countwords
+2012-06-13 20:31:35,312-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-51-1 name=countwords
+2012-06-13 20:31:35,317-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-61-1 name=countwords
+2012-06-13 20:31:35,312-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-13 20:31:35,312-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-16-1 name=countwords
+2012-06-13 20:31:35,317-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-57-1 name=countwords
+2012-06-13 20:31:35,316-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-54-1 name=countwords
+2012-06-13 20:31:35,315-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-13-1 name=countwords
+2012-06-13 20:31:35,319-0500 DEBUG countwords PROCEDURE line=4 thread=0-2-59-1 name=countwords
+2012-06-13 20:31:35,346-0500 INFO  vdl:execute START thread=0-2-11-1 tr=sleep
+2012-06-13 20:31:35,346-0500 INFO  vdl:execute START thread=0-2-21-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-4-1 tr=sleep
+2012-06-13 20:31:35,346-0500 INFO  vdl:execute START thread=0-2-2-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-41-1 tr=sleep
+2012-06-13 20:31:35,346-0500 INFO  vdl:execute START thread=0-2-62-1 tr=sleep
+2012-06-13 20:31:35,346-0500 INFO  vdl:execute START thread=0-2-36-1 tr=sleep
+2012-06-13 20:31:35,346-0500 INFO  vdl:execute START thread=0-2-55-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-48-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-19-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-46-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-29-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-38-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-6-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-33-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-43-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-27-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-20-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-3-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-63-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-5-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-45-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-61-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-15-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-25-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-7-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-40-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-13-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-18-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-60-1 tr=sleep
+2012-06-13 20:31:35,348-0500 INFO  vdl:execute START thread=0-2-9-1 tr=sleep
+2012-06-13 20:31:35,347-0500 INFO  vdl:execute START thread=0-2-23-1 tr=sleep
+2012-06-13 20:31:35,350-0500 INFO  vdl:execute START thread=0-2-58-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-24-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-16-1 tr=sleep
+2012-06-13 20:31:35,350-0500 INFO  vdl:execute START thread=0-2-57-1 tr=sleep
+2012-06-13 20:31:35,350-0500 INFO  vdl:execute START thread=0-2-0-1 tr=sleep
+2012-06-13 20:31:35,351-0500 INFO  vdl:execute START thread=0-2-17-1 tr=sleep
+2012-06-13 20:31:35,351-0500 INFO  vdl:execute START thread=0-2-12-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-54-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-14-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-37-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-32-1 tr=sleep
+2012-06-13 20:31:35,352-0500 INFO  vdl:execute START thread=0-2-10-1 tr=sleep
+2012-06-13 20:31:35,352-0500 INFO  vdl:execute START thread=0-2-34-1 tr=sleep
+2012-06-13 20:31:35,353-0500 INFO  vdl:execute START thread=0-2-30-1 tr=sleep
+2012-06-13 20:31:35,353-0500 INFO  vdl:execute START thread=0-2-49-1 tr=sleep
+2012-06-13 20:31:35,353-0500 INFO  vdl:execute START thread=0-2-44-1 tr=sleep
+2012-06-13 20:31:35,354-0500 INFO  vdl:execute START thread=0-2-31-1 tr=sleep
+2012-06-13 20:31:35,357-0500 INFO  vdl:execute START thread=0-2-1-1 tr=sleep
+2012-06-13 20:31:35,357-0500 INFO  vdl:execute START thread=0-2-51-1 tr=sleep
+2012-06-13 20:31:35,358-0500 INFO  vdl:execute START thread=0-2-22-1 tr=sleep
+2012-06-13 20:31:35,359-0500 INFO  vdl:execute START thread=0-2-50-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-47-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-8-1 tr=sleep
+2012-06-13 20:31:35,349-0500 INFO  vdl:execute START thread=0-2-56-1 tr=sleep
+2012-06-13 20:31:35,354-0500 INFO  vdl:execute START thread=0-2-52-1 tr=sleep
+2012-06-13 20:31:35,352-0500 INFO  vdl:execute START thread=0-2-28-1 tr=sleep
+2012-06-13 20:31:35,352-0500 INFO  vdl:execute START thread=0-2-26-1 tr=sleep
+2012-06-13 20:31:35,352-0500 INFO  vdl:execute START thread=0-2-42-1 tr=sleep
+2012-06-13 20:31:35,352-0500 INFO  vdl:execute START thread=0-2-35-1 tr=sleep
+2012-06-13 20:31:35,352-0500 INFO  vdl:execute START thread=0-2-39-1 tr=sleep
+2012-06-13 20:31:35,350-0500 INFO  vdl:execute START thread=0-2-59-1 tr=sleep
+2012-06-13 20:31:35,350-0500 INFO  vdl:execute START thread=0-2-53-1 tr=sleep
+2012-06-13 20:31:35,398-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:31:35,400-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-13 20:31:35,402-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:35,404-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:35,406-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-13 20:31:35,408-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:35,417-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:35,420-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:35,421-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:35,425-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:35,428-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:35,429-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-13 20:31:35,431-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-coco9qsk thread=0-2-5-1-1 host=localhost replicationGroup=gnco9qsk
+2012-06-13 20:31:35,437-0500 INFO  vdl:createdirset START jobid=sleep-coco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:31:35,438-0500 INFO  vdl:createdirset END jobid=sleep-coco9qsk - Done initializing directory structure
+2012-06-13 20:31:35,439-0500 INFO  vdl:dostagein START jobid=sleep-coco9qsk - Staging in files
+2012-06-13 20:31:35,443-0500 INFO  vdl:dostagein END jobid=sleep-coco9qsk - Staging in finished
+2012-06-13 20:31:35,444-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-coco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/c/sleep-coco9qsk host=localhost
+2012-06-13 20:31:35,447-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/wc		INSTALLED	INTEL32::LINUX	null
+localhost	sleep		/home/skrieder/c-test/sleep	INSTALLED	INTEL32::LINUX	null
+
+
+
+2012-06-13 20:31:35,447-0500 DEBUG textfiles END TC:
+2012-06-13 20:31:35,454-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-5-1-1-1339637494464) is /bin/bash shared/_swiftwrap sleep-coco9qsk -jobdir c -scratch  -e /home/skrieder/c-test/sleep -out 5.result -err stderr.txt -i -d  -if  -of 5.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:31:35,466-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-coco9qsk -jobdir c -scratch  -e /home/skrieder/c-test/sleep -out 5.result -err stderr.txt -i -d  -if  -of 5.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:31:48,407-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:48,413-0500 DEBUG vdl:checkjobstatus START jobid=sleep-coco9qsk
+2012-06-13 20:31:48,417-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:48,420-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-coco9qsk - Success file found
+2012-06-13 20:31:48,422-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-coco9qsk
+2012-06-13 20:31:48,424-0500 INFO  vdl:dostageout START jobid=sleep-coco9qsk - Staging out files
+2012-06-13 20:31:48,424-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:31:48,433-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=5.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:31:48,438-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:48,459-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:48,462-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=5.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:31:48,470-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-13 20:31:48,483-0500 INFO  vdl:dostageout END jobid=sleep-coco9qsk - Staging out finished
+2012-06-13 20:31:48,488-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-coco9qsk
+2012-06-13 20:31:48,489-0500 INFO  vdl:execute END_SUCCESS thread=0-2-5-1 tr=sleep
+2012-06-13 20:31:48,491-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:31:48,493-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-5
+2012-06-13 20:31:48,974-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:31:48,982-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-doco9qsk thread=0-2-9-1-1 host=localhost replicationGroup=bnco9qsk
+2012-06-13 20:31:48,989-0500 INFO  vdl:createdirset START jobid=sleep-doco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:31:48,990-0500 INFO  vdl:createdirset END jobid=sleep-doco9qsk - Done initializing directory structure
+2012-06-13 20:31:48,991-0500 INFO  vdl:dostagein START jobid=sleep-doco9qsk - Staging in files
+2012-06-13 20:31:48,992-0500 INFO  vdl:dostagein END jobid=sleep-doco9qsk - Staging in finished
+2012-06-13 20:31:48,994-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-doco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/d/sleep-doco9qsk host=localhost
+2012-06-13 20:31:49,003-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-9-1-1-1339637494475) is /bin/bash shared/_swiftwrap sleep-doco9qsk -jobdir d -scratch  -e /home/skrieder/c-test/sleep -out 9.result -err stderr.txt -i -d  -if  -of 9.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:31:49,005-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-doco9qsk -jobdir d -scratch  -e /home/skrieder/c-test/sleep -out 9.result -err stderr.txt -i -d  -if  -of 9.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:01,939-0500 INFO  LateBindingScheduler JobQueue: 62
+2012-06-13 20:32:01,945-0500 DEBUG vdl:checkjobstatus START jobid=sleep-doco9qsk
+2012-06-13 20:32:01,948-0500 INFO  LateBindingScheduler JobQueue: 62
+2012-06-13 20:32:01,950-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-doco9qsk - Success file found
+2012-06-13 20:32:01,953-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-doco9qsk
+2012-06-13 20:32:01,956-0500 INFO  vdl:dostageout START jobid=sleep-doco9qsk - Staging out files
+2012-06-13 20:32:01,957-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:32:01,965-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=9.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:01,970-0500 INFO  LateBindingScheduler JobQueue: 62
+2012-06-13 20:32:01,980-0500 INFO  LateBindingScheduler JobQueue: 62
+2012-06-13 20:32:01,982-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=9.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:01,986-0500 INFO  LateBindingScheduler JobQueue: 62
+2012-06-13 20:32:01,990-0500 INFO  vdl:dostageout END jobid=sleep-doco9qsk - Staging out finished
+2012-06-13 20:32:01,995-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-doco9qsk
+2012-06-13 20:32:01,996-0500 INFO  vdl:execute END_SUCCESS thread=0-2-9-1 tr=sleep
+2012-06-13 20:32:01,998-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:32:02,004-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-9
+2012-06-13 20:32:02,488-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:32:02,493-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-eoco9qsk thread=0-2-16-1-1 host=localhost replicationGroup=8nco9qsk
+2012-06-13 20:32:02,497-0500 INFO  vdl:createdirset START jobid=sleep-eoco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:32:02,498-0500 INFO  vdl:createdirset END jobid=sleep-eoco9qsk - Done initializing directory structure
+2012-06-13 20:32:02,498-0500 INFO  vdl:dostagein START jobid=sleep-eoco9qsk - Staging in files
+2012-06-13 20:32:02,499-0500 INFO  vdl:dostagein END jobid=sleep-eoco9qsk - Staging in finished
+2012-06-13 20:32:02,500-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-eoco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/e/sleep-eoco9qsk host=localhost
+2012-06-13 20:32:02,508-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-16-1-1-1339637494486) is /bin/bash shared/_swiftwrap sleep-eoco9qsk -jobdir e -scratch  -e /home/skrieder/c-test/sleep -out 16.result -err stderr.txt -i -d  -if  -of 16.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:02,509-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-eoco9qsk -jobdir e -scratch  -e /home/skrieder/c-test/sleep -out 16.result -err stderr.txt -i -d  -if  -of 16.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:15,444-0500 INFO  LateBindingScheduler JobQueue: 61
+2012-06-13 20:32:15,446-0500 DEBUG vdl:checkjobstatus START jobid=sleep-eoco9qsk
+2012-06-13 20:32:15,449-0500 INFO  LateBindingScheduler JobQueue: 61
+2012-06-13 20:32:15,450-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-eoco9qsk - Success file found
+2012-06-13 20:32:15,451-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-eoco9qsk
+2012-06-13 20:32:15,451-0500 INFO  vdl:dostageout START jobid=sleep-eoco9qsk - Staging out files
+2012-06-13 20:32:15,452-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:32:15,458-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=16.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:15,463-0500 INFO  LateBindingScheduler JobQueue: 61
+2012-06-13 20:32:15,470-0500 INFO  LateBindingScheduler JobQueue: 61
+2012-06-13 20:32:15,471-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=16.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:15,475-0500 INFO  LateBindingScheduler JobQueue: 61
+2012-06-13 20:32:15,477-0500 INFO  vdl:dostageout END jobid=sleep-eoco9qsk - Staging out finished
+2012-06-13 20:32:15,480-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-eoco9qsk
+2012-06-13 20:32:15,482-0500 INFO  vdl:execute END_SUCCESS thread=0-2-16-1 tr=sleep
+2012-06-13 20:32:15,483-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:32:15,484-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-16
+2012-06-13 20:32:15,977-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:32:15,979-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-foco9qsk thread=0-2-14-1-1 host=localhost replicationGroup=smco9qsk
+2012-06-13 20:32:15,984-0500 INFO  vdl:createdirset START jobid=sleep-foco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:32:15,985-0500 INFO  vdl:createdirset END jobid=sleep-foco9qsk - Done initializing directory structure
+2012-06-13 20:32:15,985-0500 INFO  vdl:dostagein START jobid=sleep-foco9qsk - Staging in files
+2012-06-13 20:32:15,986-0500 INFO  vdl:dostagein END jobid=sleep-foco9qsk - Staging in finished
+2012-06-13 20:32:15,987-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-foco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/f/sleep-foco9qsk host=localhost
+2012-06-13 20:32:15,994-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-14-1-1-1339637494497) is /bin/bash shared/_swiftwrap sleep-foco9qsk -jobdir f -scratch  -e /home/skrieder/c-test/sleep -out 14.result -err stderr.txt -i -d  -if  -of 14.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:15,996-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-foco9qsk -jobdir f -scratch  -e /home/skrieder/c-test/sleep -out 14.result -err stderr.txt -i -d  -if  -of 14.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:28,930-0500 INFO  LateBindingScheduler JobQueue: 60
+2012-06-13 20:32:28,933-0500 DEBUG vdl:checkjobstatus START jobid=sleep-foco9qsk
+2012-06-13 20:32:28,936-0500 INFO  LateBindingScheduler JobQueue: 60
+2012-06-13 20:32:28,937-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-foco9qsk - Success file found
+2012-06-13 20:32:28,938-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-foco9qsk
+2012-06-13 20:32:28,939-0500 INFO  vdl:dostageout START jobid=sleep-foco9qsk - Staging out files
+2012-06-13 20:32:28,939-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:32:28,944-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=14.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:28,948-0500 INFO  LateBindingScheduler JobQueue: 60
+2012-06-13 20:32:28,955-0500 INFO  LateBindingScheduler JobQueue: 60
+2012-06-13 20:32:28,956-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=14.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:28,960-0500 INFO  LateBindingScheduler JobQueue: 60
+2012-06-13 20:32:28,963-0500 INFO  vdl:dostageout END jobid=sleep-foco9qsk - Staging out finished
+2012-06-13 20:32:28,965-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-foco9qsk
+2012-06-13 20:32:28,966-0500 INFO  vdl:execute END_SUCCESS thread=0-2-14-1 tr=sleep
+2012-06-13 20:32:28,967-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:32:28,967-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-14
+2012-06-13 20:32:29,462-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:32:29,465-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-goco9qsk thread=0-2-6-1-1 host=localhost replicationGroup=umco9qsk
+2012-06-13 20:32:29,469-0500 INFO  vdl:createdirset START jobid=sleep-goco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:32:29,470-0500 INFO  vdl:createdirset END jobid=sleep-goco9qsk - Done initializing directory structure
+2012-06-13 20:32:29,470-0500 INFO  vdl:dostagein START jobid=sleep-goco9qsk - Staging in files
+2012-06-13 20:32:29,471-0500 INFO  vdl:dostagein END jobid=sleep-goco9qsk - Staging in finished
+2012-06-13 20:32:29,472-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-goco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/g/sleep-goco9qsk host=localhost
+2012-06-13 20:32:29,476-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-6-1-1-1339637494508) is /bin/bash shared/_swiftwrap sleep-goco9qsk -jobdir g -scratch  -e /home/skrieder/c-test/sleep -out 6.result -err stderr.txt -i -d  -if  -of 6.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:29,478-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-goco9qsk -jobdir g -scratch  -e /home/skrieder/c-test/sleep -out 6.result -err stderr.txt -i -d  -if  -of 6.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:42,413-0500 INFO  LateBindingScheduler JobQueue: 59
+2012-06-13 20:32:42,416-0500 DEBUG vdl:checkjobstatus START jobid=sleep-goco9qsk
+2012-06-13 20:32:42,418-0500 INFO  LateBindingScheduler JobQueue: 59
+2012-06-13 20:32:42,419-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-goco9qsk - Success file found
+2012-06-13 20:32:42,421-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-goco9qsk
+2012-06-13 20:32:42,422-0500 INFO  vdl:dostageout START jobid=sleep-goco9qsk - Staging out files
+2012-06-13 20:32:42,423-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:32:42,426-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=6.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:42,430-0500 INFO  LateBindingScheduler JobQueue: 59
+2012-06-13 20:32:42,437-0500 INFO  LateBindingScheduler JobQueue: 59
+2012-06-13 20:32:42,438-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=6.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:42,442-0500 INFO  LateBindingScheduler JobQueue: 59
+2012-06-13 20:32:42,444-0500 INFO  vdl:dostageout END jobid=sleep-goco9qsk - Staging out finished
+2012-06-13 20:32:42,446-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-goco9qsk
+2012-06-13 20:32:42,447-0500 INFO  vdl:execute END_SUCCESS thread=0-2-6-1 tr=sleep
+2012-06-13 20:32:42,448-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:32:42,449-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-6
+2012-06-13 20:32:42,944-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:32:42,947-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-hoco9qsk thread=0-2-57-1-1 host=localhost replicationGroup=fnco9qsk
+2012-06-13 20:32:42,951-0500 INFO  vdl:createdirset START jobid=sleep-hoco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:32:42,951-0500 INFO  vdl:createdirset END jobid=sleep-hoco9qsk - Done initializing directory structure
+2012-06-13 20:32:42,952-0500 INFO  vdl:dostagein START jobid=sleep-hoco9qsk - Staging in files
+2012-06-13 20:32:42,953-0500 INFO  vdl:dostagein END jobid=sleep-hoco9qsk - Staging in finished
+2012-06-13 20:32:42,954-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-hoco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/h/sleep-hoco9qsk host=localhost
+2012-06-13 20:32:42,959-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-57-1-1-1339637494519) is /bin/bash shared/_swiftwrap sleep-hoco9qsk -jobdir h -scratch  -e /home/skrieder/c-test/sleep -out 57.result -err stderr.txt -i -d  -if  -of 57.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:42,961-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-hoco9qsk -jobdir h -scratch  -e /home/skrieder/c-test/sleep -out 57.result -err stderr.txt -i -d  -if  -of 57.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:55,886-0500 INFO  LateBindingScheduler JobQueue: 58
+2012-06-13 20:32:55,889-0500 DEBUG vdl:checkjobstatus START jobid=sleep-hoco9qsk
+2012-06-13 20:32:55,891-0500 INFO  LateBindingScheduler JobQueue: 58
+2012-06-13 20:32:55,892-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-hoco9qsk - Success file found
+2012-06-13 20:32:55,893-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-hoco9qsk
+2012-06-13 20:32:55,894-0500 INFO  vdl:dostageout START jobid=sleep-hoco9qsk - Staging out files
+2012-06-13 20:32:55,894-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:32:55,899-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=57.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:55,903-0500 INFO  LateBindingScheduler JobQueue: 58
+2012-06-13 20:32:55,911-0500 INFO  LateBindingScheduler JobQueue: 58
+2012-06-13 20:32:55,912-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=57.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:32:55,916-0500 INFO  LateBindingScheduler JobQueue: 58
+2012-06-13 20:32:55,919-0500 INFO  vdl:dostageout END jobid=sleep-hoco9qsk - Staging out finished
+2012-06-13 20:32:55,920-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-hoco9qsk
+2012-06-13 20:32:55,921-0500 INFO  vdl:execute END_SUCCESS thread=0-2-57-1 tr=sleep
+2012-06-13 20:32:55,922-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:32:55,923-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-57
+2012-06-13 20:32:56,418-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:32:56,421-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-ioco9qsk thread=0-2-37-1-1 host=localhost replicationGroup=hnco9qsk
+2012-06-13 20:32:56,425-0500 INFO  vdl:createdirset START jobid=sleep-ioco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:32:56,426-0500 INFO  vdl:createdirset END jobid=sleep-ioco9qsk - Done initializing directory structure
+2012-06-13 20:32:56,426-0500 INFO  vdl:dostagein START jobid=sleep-ioco9qsk - Staging in files
+2012-06-13 20:32:56,427-0500 INFO  vdl:dostagein END jobid=sleep-ioco9qsk - Staging in finished
+2012-06-13 20:32:56,428-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-ioco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/i/sleep-ioco9qsk host=localhost
+2012-06-13 20:32:56,432-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-37-1-1-1339637494530) is /bin/bash shared/_swiftwrap sleep-ioco9qsk -jobdir i -scratch  -e /home/skrieder/c-test/sleep -out 37.result -err stderr.txt -i -d  -if  -of 37.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:32:56,434-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-ioco9qsk -jobdir i -scratch  -e /home/skrieder/c-test/sleep -out 37.result -err stderr.txt -i -d  -if  -of 37.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:33:09,356-0500 INFO  LateBindingScheduler JobQueue: 57
+2012-06-13 20:33:09,359-0500 DEBUG vdl:checkjobstatus START jobid=sleep-ioco9qsk
+2012-06-13 20:33:09,362-0500 INFO  LateBindingScheduler JobQueue: 57
+2012-06-13 20:33:09,362-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-ioco9qsk - Success file found
+2012-06-13 20:33:09,364-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-ioco9qsk
+2012-06-13 20:33:09,365-0500 INFO  vdl:dostageout START jobid=sleep-ioco9qsk - Staging out files
+2012-06-13 20:33:09,365-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:33:09,370-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=37.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:33:09,374-0500 INFO  LateBindingScheduler JobQueue: 57
+2012-06-13 20:33:09,381-0500 INFO  LateBindingScheduler JobQueue: 57
+2012-06-13 20:33:09,382-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=37.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:33:09,384-0500 INFO  LateBindingScheduler JobQueue: 57
+2012-06-13 20:33:09,386-0500 INFO  vdl:dostageout END jobid=sleep-ioco9qsk - Staging out finished
+2012-06-13 20:33:09,388-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-ioco9qsk
+2012-06-13 20:33:09,390-0500 INFO  vdl:execute END_SUCCESS thread=0-2-37-1 tr=sleep
+2012-06-13 20:33:09,390-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:33:09,391-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-37
+2012-06-13 20:33:09,887-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:33:09,889-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-joco9qsk thread=0-2-34-1-1 host=localhost replicationGroup=nnco9qsk
+2012-06-13 20:33:09,893-0500 INFO  vdl:createdirset START jobid=sleep-joco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:33:09,893-0500 INFO  vdl:createdirset END jobid=sleep-joco9qsk - Done initializing directory structure
+2012-06-13 20:33:09,894-0500 INFO  vdl:dostagein START jobid=sleep-joco9qsk - Staging in files
+2012-06-13 20:33:09,896-0500 INFO  vdl:dostagein END jobid=sleep-joco9qsk - Staging in finished
+2012-06-13 20:33:09,897-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-joco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/j/sleep-joco9qsk host=localhost
+2012-06-13 20:33:09,905-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-34-1-1-1339637494541) is /bin/bash shared/_swiftwrap sleep-joco9qsk -jobdir j -scratch  -e /home/skrieder/c-test/sleep -out 34.result -err stderr.txt -i -d  -if  -of 34.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:33:09,907-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-joco9qsk -jobdir j -scratch  -e /home/skrieder/c-test/sleep -out 34.result -err stderr.txt -i -d  -if  -of 34.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:33:22,849-0500 INFO  LateBindingScheduler JobQueue: 56
+2012-06-13 20:33:22,851-0500 DEBUG vdl:checkjobstatus START jobid=sleep-joco9qsk
+2012-06-13 20:33:22,854-0500 INFO  LateBindingScheduler JobQueue: 56
+2012-06-13 20:33:22,855-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-joco9qsk - Success file found
+2012-06-13 20:33:22,856-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-joco9qsk
+2012-06-13 20:33:22,857-0500 INFO  vdl:dostageout START jobid=sleep-joco9qsk - Staging out files
+2012-06-13 20:33:22,857-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:33:22,860-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=34.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:33:22,864-0500 INFO  LateBindingScheduler JobQueue: 56
+2012-06-13 20:33:22,870-0500 INFO  LateBindingScheduler JobQueue: 56
+2012-06-13 20:33:22,871-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=34.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:33:22,874-0500 INFO  LateBindingScheduler JobQueue: 56
+2012-06-13 20:33:22,877-0500 INFO  vdl:dostageout END jobid=sleep-joco9qsk - Staging out finished
+2012-06-13 20:33:22,879-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-joco9qsk
+2012-06-13 20:33:22,880-0500 INFO  vdl:execute END_SUCCESS thread=0-2-34-1 tr=sleep
+2012-06-13 20:33:22,881-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:33:22,882-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-34
+2012-06-13 20:33:23,376-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:33:23,379-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-koco9qsk thread=0-2-51-1-1 host=localhost replicationGroup=tnco9qsk
+2012-06-13 20:33:23,384-0500 INFO  vdl:createdirset START jobid=sleep-koco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:33:23,384-0500 INFO  vdl:createdirset END jobid=sleep-koco9qsk - Done initializing directory structure
+2012-06-13 20:33:23,385-0500 INFO  vdl:dostagein START jobid=sleep-koco9qsk - Staging in files
+2012-06-13 20:33:23,386-0500 INFO  vdl:dostagein END jobid=sleep-koco9qsk - Staging in finished
+2012-06-13 20:33:23,387-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-koco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/k/sleep-koco9qsk host=localhost
+2012-06-13 20:33:23,391-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-51-1-1-1339637494552) is /bin/bash shared/_swiftwrap sleep-koco9qsk -jobdir k -scratch  -e /home/skrieder/c-test/sleep -out 51.result -err stderr.txt -i -d  -if  -of 51.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:33:23,392-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-koco9qsk -jobdir k -scratch  -e /home/skrieder/c-test/sleep -out 51.result -err stderr.txt -i -d  -if  -of 51.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:33:36,335-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-13 20:33:36,337-0500 DEBUG vdl:checkjobstatus START jobid=sleep-koco9qsk
+2012-06-13 20:33:36,340-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-13 20:33:36,341-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-koco9qsk - Success file found
+2012-06-13 20:33:36,342-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-koco9qsk
+2012-06-13 20:33:36,343-0500 INFO  vdl:dostageout START jobid=sleep-koco9qsk - Staging out files
+2012-06-13 20:33:36,344-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:33:36,347-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=51.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:33:36,350-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-13 20:33:36,357-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-13 20:33:36,358-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=51.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:33:36,361-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-13 20:33:36,364-0500 INFO  vdl:dostageout END jobid=sleep-koco9qsk - Staging out finished
+2012-06-13 20:33:36,366-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-koco9qsk
+2012-06-13 20:33:36,367-0500 INFO  vdl:execute END_SUCCESS thread=0-2-51-1 tr=sleep
+2012-06-13 20:33:36,368-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:33:36,369-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-51
+2012-06-13 20:33:36,863-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:33:36,865-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-loco9qsk thread=0-2-0-1-1 host=localhost replicationGroup=lnco9qsk
+2012-06-13 20:33:36,870-0500 INFO  vdl:createdirset START jobid=sleep-loco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:33:36,870-0500 INFO  vdl:createdirset END jobid=sleep-loco9qsk - Done initializing directory structure
+2012-06-13 20:33:36,871-0500 INFO  vdl:dostagein START jobid=sleep-loco9qsk - Staging in files
+2012-06-13 20:33:36,872-0500 INFO  vdl:dostagein END jobid=sleep-loco9qsk - Staging in finished
+2012-06-13 20:33:36,873-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-loco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/l/sleep-loco9qsk host=localhost
+2012-06-13 20:33:36,879-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-0-1-1-1339637494563) is /bin/bash shared/_swiftwrap sleep-loco9qsk -jobdir l -scratch  -e /home/skrieder/c-test/sleep -out 0.result -err stderr.txt -i -d  -if  -of 0.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:33:36,881-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-loco9qsk -jobdir l -scratch  -e /home/skrieder/c-test/sleep -out 0.result -err stderr.txt -i -d  -if  -of 0.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:33:49,823-0500 INFO  LateBindingScheduler JobQueue: 54
+2012-06-13 20:33:49,826-0500 DEBUG vdl:checkjobstatus START jobid=sleep-loco9qsk
+2012-06-13 20:33:49,828-0500 INFO  LateBindingScheduler JobQueue: 54
+2012-06-13 20:33:49,829-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-loco9qsk - Success file found
+2012-06-13 20:33:49,830-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-loco9qsk
+2012-06-13 20:33:49,831-0500 INFO  vdl:dostageout START jobid=sleep-loco9qsk - Staging out files
+2012-06-13 20:33:49,831-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:33:49,835-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=0.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:33:49,839-0500 INFO  LateBindingScheduler JobQueue: 54
+2012-06-13 20:33:49,845-0500 INFO  LateBindingScheduler JobQueue: 54
+2012-06-13 20:33:49,847-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=0.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:33:49,850-0500 INFO  LateBindingScheduler JobQueue: 54
+2012-06-13 20:33:49,853-0500 INFO  vdl:dostageout END jobid=sleep-loco9qsk - Staging out finished
+2012-06-13 20:33:49,854-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-loco9qsk
+2012-06-13 20:33:49,855-0500 INFO  vdl:execute END_SUCCESS thread=0-2-0-1 tr=sleep
+2012-06-13 20:33:49,856-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:33:49,857-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-0
+2012-06-13 20:33:50,351-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:33:50,354-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-moco9qsk thread=0-2-55-1-1 host=localhost replicationGroup=omco9qsk
+2012-06-13 20:33:50,359-0500 INFO  vdl:createdirset START jobid=sleep-moco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:33:50,360-0500 INFO  vdl:createdirset END jobid=sleep-moco9qsk - Done initializing directory structure
+2012-06-13 20:33:50,360-0500 INFO  vdl:dostagein START jobid=sleep-moco9qsk - Staging in files
+2012-06-13 20:33:50,362-0500 INFO  vdl:dostagein END jobid=sleep-moco9qsk - Staging in finished
+2012-06-13 20:33:50,363-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-moco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/m/sleep-moco9qsk host=localhost
+2012-06-13 20:33:50,368-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-55-1-1-1339637494574) is /bin/bash shared/_swiftwrap sleep-moco9qsk -jobdir m -scratch  -e /home/skrieder/c-test/sleep -out 55.result -err stderr.txt -i -d  -if  -of 55.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:33:50,369-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-moco9qsk -jobdir m -scratch  -e /home/skrieder/c-test/sleep -out 55.result -err stderr.txt -i -d  -if  -of 55.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:03,312-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-13 20:34:03,314-0500 DEBUG vdl:checkjobstatus START jobid=sleep-moco9qsk
+2012-06-13 20:34:03,317-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-13 20:34:03,318-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-moco9qsk - Success file found
+2012-06-13 20:34:03,319-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-moco9qsk
+2012-06-13 20:34:03,320-0500 INFO  vdl:dostageout START jobid=sleep-moco9qsk - Staging out files
+2012-06-13 20:34:03,321-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:34:03,324-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=55.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:03,328-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-13 20:34:03,335-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-13 20:34:03,337-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=55.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:03,339-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-13 20:34:03,342-0500 INFO  vdl:dostageout END jobid=sleep-moco9qsk - Staging out finished
+2012-06-13 20:34:03,344-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-moco9qsk
+2012-06-13 20:34:03,345-0500 INFO  vdl:execute END_SUCCESS thread=0-2-55-1 tr=sleep
+2012-06-13 20:34:03,346-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:34:03,346-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-55
+2012-06-13 20:34:03,840-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:34:03,843-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-noco9qsk thread=0-2-24-1-1 host=localhost replicationGroup=knco9qsk
+2012-06-13 20:34:03,847-0500 INFO  vdl:createdirset START jobid=sleep-noco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:34:03,848-0500 INFO  vdl:createdirset END jobid=sleep-noco9qsk - Done initializing directory structure
+2012-06-13 20:34:03,849-0500 INFO  vdl:dostagein START jobid=sleep-noco9qsk - Staging in files
+2012-06-13 20:34:03,850-0500 INFO  vdl:dostagein END jobid=sleep-noco9qsk - Staging in finished
+2012-06-13 20:34:03,851-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-noco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/n/sleep-noco9qsk host=localhost
+2012-06-13 20:34:03,855-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-24-1-1-1339637494585) is /bin/bash shared/_swiftwrap sleep-noco9qsk -jobdir n -scratch  -e /home/skrieder/c-test/sleep -out 24.result -err stderr.txt -i -d  -if  -of 24.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:03,856-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-noco9qsk -jobdir n -scratch  -e /home/skrieder/c-test/sleep -out 24.result -err stderr.txt -i -d  -if  -of 24.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:16,798-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-13 20:34:16,801-0500 DEBUG vdl:checkjobstatus START jobid=sleep-noco9qsk
+2012-06-13 20:34:16,804-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-13 20:34:16,804-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-noco9qsk - Success file found
+2012-06-13 20:34:16,806-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-noco9qsk
+2012-06-13 20:34:16,807-0500 INFO  vdl:dostageout START jobid=sleep-noco9qsk - Staging out files
+2012-06-13 20:34:16,807-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:34:16,813-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=24.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:16,817-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-13 20:34:16,824-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-13 20:34:16,825-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=24.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:16,828-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-13 20:34:16,831-0500 INFO  vdl:dostageout END jobid=sleep-noco9qsk - Staging out finished
+2012-06-13 20:34:16,833-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-noco9qsk
+2012-06-13 20:34:16,834-0500 INFO  vdl:execute END_SUCCESS thread=0-2-24-1 tr=sleep
+2012-06-13 20:34:16,835-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:34:16,836-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-24
+2012-06-13 20:34:17,329-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:34:17,331-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-ooco9qsk thread=0-2-44-1-1 host=localhost replicationGroup=rnco9qsk
+2012-06-13 20:34:17,335-0500 INFO  vdl:createdirset START jobid=sleep-ooco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:34:17,335-0500 INFO  vdl:createdirset END jobid=sleep-ooco9qsk - Done initializing directory structure
+2012-06-13 20:34:17,336-0500 INFO  vdl:dostagein START jobid=sleep-ooco9qsk - Staging in files
+2012-06-13 20:34:17,337-0500 INFO  vdl:dostagein END jobid=sleep-ooco9qsk - Staging in finished
+2012-06-13 20:34:17,338-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-ooco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/o/sleep-ooco9qsk host=localhost
+2012-06-13 20:34:17,345-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-44-1-1-1339637494596) is /bin/bash shared/_swiftwrap sleep-ooco9qsk -jobdir o -scratch  -e /home/skrieder/c-test/sleep -out 44.result -err stderr.txt -i -d  -if  -of 44.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:17,347-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-ooco9qsk -jobdir o -scratch  -e /home/skrieder/c-test/sleep -out 44.result -err stderr.txt -i -d  -if  -of 44.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:30,288-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-13 20:34:30,291-0500 DEBUG vdl:checkjobstatus START jobid=sleep-ooco9qsk
+2012-06-13 20:34:30,293-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-13 20:34:30,294-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-ooco9qsk - Success file found
+2012-06-13 20:34:30,296-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-ooco9qsk
+2012-06-13 20:34:30,297-0500 INFO  vdl:dostageout START jobid=sleep-ooco9qsk - Staging out files
+2012-06-13 20:34:30,298-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:34:30,302-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=44.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:30,306-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-13 20:34:30,315-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-13 20:34:30,316-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=44.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:30,319-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-13 20:34:30,321-0500 INFO  vdl:dostageout END jobid=sleep-ooco9qsk - Staging out finished
+2012-06-13 20:34:30,323-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-ooco9qsk
+2012-06-13 20:34:30,325-0500 INFO  vdl:execute END_SUCCESS thread=0-2-44-1 tr=sleep
+2012-06-13 20:34:30,326-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:34:30,326-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-44
+2012-06-13 20:34:30,819-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:34:30,822-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-poco9qsk thread=0-2-54-1-1 host=localhost replicationGroup=qnco9qsk
+2012-06-13 20:34:30,827-0500 INFO  vdl:createdirset START jobid=sleep-poco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:34:30,827-0500 INFO  vdl:createdirset END jobid=sleep-poco9qsk - Done initializing directory structure
+2012-06-13 20:34:30,828-0500 INFO  vdl:dostagein START jobid=sleep-poco9qsk - Staging in files
+2012-06-13 20:34:30,829-0500 INFO  vdl:dostagein END jobid=sleep-poco9qsk - Staging in finished
+2012-06-13 20:34:30,829-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-poco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/p/sleep-poco9qsk host=localhost
+2012-06-13 20:34:30,833-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-54-1-1-1339637494607) is /bin/bash shared/_swiftwrap sleep-poco9qsk -jobdir p -scratch  -e /home/skrieder/c-test/sleep -out 54.result -err stderr.txt -i -d  -if  -of 54.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:30,835-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-poco9qsk -jobdir p -scratch  -e /home/skrieder/c-test/sleep -out 54.result -err stderr.txt -i -d  -if  -of 54.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:43,777-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-13 20:34:43,779-0500 DEBUG vdl:checkjobstatus START jobid=sleep-poco9qsk
+2012-06-13 20:34:43,782-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-13 20:34:43,783-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-poco9qsk - Success file found
+2012-06-13 20:34:43,784-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-poco9qsk
+2012-06-13 20:34:43,785-0500 INFO  vdl:dostageout START jobid=sleep-poco9qsk - Staging out files
+2012-06-13 20:34:43,786-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:34:43,788-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=54.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:43,792-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-13 20:34:43,798-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-13 20:34:43,799-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=54.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:43,802-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-13 20:34:43,804-0500 INFO  vdl:dostageout END jobid=sleep-poco9qsk - Staging out finished
+2012-06-13 20:34:43,806-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-poco9qsk
+2012-06-13 20:34:43,808-0500 INFO  vdl:execute END_SUCCESS thread=0-2-54-1 tr=sleep
+2012-06-13 20:34:43,809-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:34:43,809-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-54
+2012-06-13 20:34:44,305-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:34:44,307-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-qoco9qsk thread=0-2-12-1-1 host=localhost replicationGroup=onco9qsk
+2012-06-13 20:34:44,311-0500 INFO  vdl:createdirset START jobid=sleep-qoco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:34:44,312-0500 INFO  vdl:createdirset END jobid=sleep-qoco9qsk - Done initializing directory structure
+2012-06-13 20:34:44,312-0500 INFO  vdl:dostagein START jobid=sleep-qoco9qsk - Staging in files
+2012-06-13 20:34:44,313-0500 INFO  vdl:dostagein END jobid=sleep-qoco9qsk - Staging in finished
+2012-06-13 20:34:44,314-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-qoco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/q/sleep-qoco9qsk host=localhost
+2012-06-13 20:34:44,321-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-12-1-1-1339637494618) is /bin/bash shared/_swiftwrap sleep-qoco9qsk -jobdir q -scratch  -e /home/skrieder/c-test/sleep -out 12.result -err stderr.txt -i -d  -if  -of 12.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:44,323-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-qoco9qsk -jobdir q -scratch  -e /home/skrieder/c-test/sleep -out 12.result -err stderr.txt -i -d  -if  -of 12.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:57,265-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-13 20:34:57,267-0500 DEBUG vdl:checkjobstatus START jobid=sleep-qoco9qsk
+2012-06-13 20:34:57,270-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-13 20:34:57,270-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-qoco9qsk - Success file found
+2012-06-13 20:34:57,271-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-qoco9qsk
+2012-06-13 20:34:57,272-0500 INFO  vdl:dostageout START jobid=sleep-qoco9qsk - Staging out files
+2012-06-13 20:34:57,273-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:34:57,275-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=12.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:57,279-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-13 20:34:57,285-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-13 20:34:57,286-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=12.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:34:57,289-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-13 20:34:57,292-0500 INFO  vdl:dostageout END jobid=sleep-qoco9qsk - Staging out finished
+2012-06-13 20:34:57,293-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-qoco9qsk
+2012-06-13 20:34:57,294-0500 INFO  vdl:execute END_SUCCESS thread=0-2-12-1 tr=sleep
+2012-06-13 20:34:57,295-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:34:57,295-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-12
+2012-06-13 20:34:57,792-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:34:57,796-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-roco9qsk thread=0-2-10-1-1 host=localhost replicationGroup=mnco9qsk
+2012-06-13 20:34:57,799-0500 INFO  vdl:createdirset START jobid=sleep-roco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:34:57,800-0500 INFO  vdl:createdirset END jobid=sleep-roco9qsk - Done initializing directory structure
+2012-06-13 20:34:57,801-0500 INFO  vdl:dostagein START jobid=sleep-roco9qsk - Staging in files
+2012-06-13 20:34:57,801-0500 INFO  vdl:dostagein END jobid=sleep-roco9qsk - Staging in finished
+2012-06-13 20:34:57,802-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-roco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/r/sleep-roco9qsk host=localhost
+2012-06-13 20:34:57,808-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-10-1-1-1339637494629) is /bin/bash shared/_swiftwrap sleep-roco9qsk -jobdir r -scratch  -e /home/skrieder/c-test/sleep -out 10.result -err stderr.txt -i -d  -if  -of 10.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:34:57,809-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-roco9qsk -jobdir r -scratch  -e /home/skrieder/c-test/sleep -out 10.result -err stderr.txt -i -d  -if  -of 10.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:35:10,748-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-13 20:35:10,751-0500 DEBUG vdl:checkjobstatus START jobid=sleep-roco9qsk
+2012-06-13 20:35:10,753-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-13 20:35:10,754-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sleep-roco9qsk - Success file found
+2012-06-13 20:35:10,755-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep-roco9qsk
+2012-06-13 20:35:10,756-0500 INFO  vdl:dostageout START jobid=sleep-roco9qsk - Staging out files
+2012-06-13 20:35:10,756-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-13 20:35:10,764-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=10.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:35:10,767-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-13 20:35:10,774-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-13 20:35:10,776-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=10.result srcdir=sleep-20120613-2031-aplyix0h/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-13 20:35:10,778-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-13 20:35:10,781-0500 INFO  vdl:dostageout END jobid=sleep-roco9qsk - Staging out finished
+2012-06-13 20:35:10,784-0500 DEBUG vdl:execute2 JOB_END jobid=sleep-roco9qsk
+2012-06-13 20:35:10,785-0500 INFO  vdl:execute END_SUCCESS thread=0-2-10-1 tr=sleep
+2012-06-13 20:35:10,786-0500 DEBUG countwords PROCEDURE_END line=4
+2012-06-13 20:35:10,786-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-2-10
+2012-06-13 20:35:11,281-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-13 20:35:11,284-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep-soco9qsk thread=0-2-49-1-1 host=localhost replicationGroup=pnco9qsk
+2012-06-13 20:35:11,287-0500 INFO  vdl:createdirset START jobid=sleep-soco9qsk host=localhost - Initializing directory structure
+2012-06-13 20:35:11,288-0500 INFO  vdl:createdirset END jobid=sleep-soco9qsk - Done initializing directory structure
+2012-06-13 20:35:11,288-0500 INFO  vdl:dostagein START jobid=sleep-soco9qsk - Staging in files
+2012-06-13 20:35:11,289-0500 INFO  vdl:dostagein END jobid=sleep-soco9qsk - Staging in finished
+2012-06-13 20:35:11,290-0500 DEBUG vdl:execute2 JOB_START jobid=sleep-soco9qsk tr=sleep arguments=[12800.0] tmpdir=sleep-20120613-2031-aplyix0h/jobs/s/sleep-soco9qsk host=localhost
+2012-06-13 20:35:11,297-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-2-49-1-1-1339637494640) is /bin/bash shared/_swiftwrap sleep-soco9qsk -jobdir s -scratch  -e /home/skrieder/c-test/sleep -out 49.result -err stderr.txt -i -d  -if  -of 49.result -k  -cdmfile  -status files -a 12800
+2012-06-13 20:35:11,298-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep-20120613-2031-aplyix0h command: /bin/bash /var/tmp/sleep-20120613-2031-aplyix0h/shared/_swiftwrap sleep-soco9qsk -jobdir s -scratch  -e /home/skrieder/c-test/sleep -out 49.result -err stderr.txt -i -d  -if  -of 49.result -k  -cdmfile  -status files -a 12800

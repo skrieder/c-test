@@ -5,7 +5,7 @@ for i in {1..5}
 do
 sleeptime=100
     # 1 through 8 for the sleeptimes
-    for k in {1..8}
+    for k in {1..7}
     do
 	echo ""
 	echo ""

@@ -59,8 +59,7 @@ int main(int argc, char **argv)
     int nkernels = 16;               // number of concurrent kernels
     int nstreams = nkernels + 1;    // use one more stream than concurrent kernel
     int nbytes = nkernels * sizeof(clock_t);   // number of data bytes
-    float kernel_time = 10; // time the kernel should run in ms
-//    float elapsed_time;   // timing variables
+    int kernel_time = 10; // time the kernel should run in ms
     int cuda_device = 0;
 
     shrQAStart(argc, argv); 
@@ -69,6 +68,11 @@ int main(int argc, char **argv)
     if (cutCheckCmdLineFlag(argc, (const char **)argv, "nkernels")) {
         cutGetCmdLineArgumenti(argc, (const char **)argv, "nkernels", &nkernels);
         nstreams = nkernels + 1;
+    }
+
+    // get kernel_time if overridden on the command line
+    if (cutCheckCmdLineFlag(argc, (const char **)argv, "kernel_time")) {
+        cutGetCmdLineArgumenti(argc, (const char **)argv, "kernel_time", &kernel_time);
     }
 
     // use command-line specified CUDA device, otherwise use device with highest Gflops/s
@@ -118,11 +122,9 @@ int main(int argc, char **argv)
     // the commands in this stream get dispatched as soon as all the kernel events have been recorded
     sum<<<1,32,0,streams[nstreams-1]>>>(d_a, nkernels);
     cutilSafeCall( cudaMemcpyAsync(a, d_a, sizeof(clock_t), cudaMemcpyDeviceToHost, streams[nstreams-1]) );
- 
+
     // at this point the CPU has dispatched all work for the GPU and can continue processing other tasks in parallel
-
     // in this sample we just wait until the GPU is done
-
     // release resources
     for(int i = 0; i < nkernels; i++) {
         cudaStreamDestroy(streams[i]); 
